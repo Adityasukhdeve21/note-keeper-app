@@ -1,0 +1,556 @@
+.app {
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+  
+  .app.light {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .app.dark {
+    background-color: #1f0f40;
+    color: #e0e0e0;
+  }
+  
+  /* Login Page Styles */
+  .login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .login-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .login-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .light .login-card {
+    --card-bg: white;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .dark .login-card {
+    --card-bg: #2d2d2d;
+    border: 1px solid #404040;
+  }
+  
+  .login-card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .login-card p {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+  }
+  
+  .light .login-card p {
+    --text-secondary: #666;
+  }
+  
+  .dark .login-card p {
+    --text-secondary: #ccc;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--input-color);
+    transition: border-color 0.2s ease;
+  }
+  
+  .light .form-group input,
+  .light .form-group textarea {
+    --input-border: #d0d0d0;
+    --input-bg: white;
+    --input-color: #333;
+  }
+  
+  .dark .form-group input,
+  .dark .form-group textarea {
+    --input-border: #404040;
+    --input-bg: #2d2d2d;
+    --input-color: #e0e0e0;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .form-group input.error,
+  .form-group textarea.error {
+    border-color: #dc3545;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+  
+  .login-btn,
+  .save-btn {
+    background: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .login-btn:hover,
+  .save-btn:hover {
+    background: #0056b3;
+  }
+  
+  .cancel-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+  }
+  
+  .light .cancel-btn {
+    --text-secondary: #666;
+    --input-border: #d0d0d0;
+  }
+  
+  .dark .cancel-btn {
+    --text-secondary: #ccc;
+    --input-border: #404040;
+  }
+  
+  .cancel-btn:hover {
+    background: var(--hover-bg);
+  }
+  
+  .light .cancel-btn:hover {
+    --hover-bg: #f8f9fa;
+  }
+  
+  .dark .cancel-btn:hover {
+    --hover-bg: #404040;
+  }
+  
+  /* Notes Page Styles */
+  .notes-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notes-header {
+    background: var(--header-bg);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .light .notes-header {
+    --header-bg: white;
+    --border-color: #e0e0e0;
+  }
+  
+  .dark .notes-header {
+    --header-bg: #2d2d2d;
+    --border-color: #404040;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .header-left h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .welcome-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .theme-toggle {
+    background: rgb(216, 147, 27);
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+  }
+  
+  .light .theme-toggle {
+    --input-border: #d0d0d0;
+  }
+  
+  .dark .theme-toggle {
+    --input-border: #404040;
+  }
+  
+  .theme-toggle:hover {
+    background: var(--hover-bg);
+  }
+  
+  .light .theme-toggle:hover {
+    --hover-bg: #f8f9fa;
+  }
+  
+  .dark .theme-toggle:hover {
+    --hover-bg: #404040;
+  }
+  
+  .logout-btn {
+    background: #dc3545;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+  }
+  
+  .logout-btn:hover {
+    background: #c82333;
+  }
+  
+  .notes-container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .notes-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+  
+  .search-container {
+    flex: 1;
+    max-width: 400px;
+    border: #404040;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    background: rgb(46, 41, 41);
+    color: var(--input-color);
+  }
+  
+  .add-note-btn {
+    background: #28a745;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .add-note-btn:hover {
+    background: #218838;
+  }
+  
+  .notes-content {
+    min-height: 400px;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+  }
+  
+  .empty-state h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(67, 62, 80, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  /* Note Form Styles */
+  .note-form h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .note-form textarea {
+    resize: vertical;
+    min-height: 200px;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+  
+  /* Note List Styles */
+  .note-list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  
+  .note-card {
+    background: rgb(48, 144, 123);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(80, 77, 77, 0.1);
+  }
+  
+  .note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  
+  .note-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 1;
+    word-break: break-word;
+  }
+  
+  .note-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    background: transparent;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    border: 1px solid transparent;
+  }
+  
+  .edit-btn:hover {
+    background: var(--edit-hover);
+    border-color: var(--edit-border);
+  }
+  
+  .delete-btn:hover {
+    background: var(--delete-hover);
+    border-color: var(--delete-border);
+  }
+  
+  .light .edit-btn:hover {
+    --edit-hover: #e3f2fd;
+    --edit-border: #2196f3;
+  }
+  
+  .dark .edit-btn:hover {
+    --edit-hover: rgba(33, 150, 243, 0.1);
+    --edit-border: #2196f3;
+  }
+  
+  .light .delete-btn:hover {
+    --delete-hover: #ffebee;
+    --delete-border: #f44336;
+  }
+  
+  .dark .delete-btn:hover {
+    --delete-hover: rgba(244, 67, 54, 0.1);
+    --delete-border: #f44336;
+  }
+  
+  .note-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  .note-meta {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+  }
+  
+  .note-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+  
+  .light .note-dates {
+    --text-tertiary: #999;
+  }
+  
+  .dark .note-dates {
+    --text-tertiary: #aaa;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .notes-header {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  
+    .header-left,
+    .header-right {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .notes-container {
+      padding: 1rem;
+    }
+  
+    .notes-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search-container {
+      max-width: none;
+    }
+  
+    .note-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .modal-content {
+      padding: 1.5rem;
+      margin: 10px;
+    }
+  
+    .form-actions {
+      flex-direction: column;
+    }
+  
+    .login-header {
+      position: static;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .notes-header {
+      padding: 0.75rem;
+    }
+  
+    .header-left h1 {
+      font-size: 1.25rem;
+    }
+  
+    .notes-container {
+      padding: 0.75rem;
+    }
+  
+    .note-card {
+      padding: 1rem;
+    }
+  
+    .note-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .note-actions {
+      align-self: flex-end;
+    }
+  }
